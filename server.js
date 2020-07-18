@@ -1,23 +1,29 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const path = require('path');
 
-const projects = require('./routes/api/projects')
+const projects = require('./routes/api/projects');
 
 const app = express();
 
 // bodyparser Middleware
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 app.use(bodyParser.json());
 
 // Connect to the Mongo DB
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/gardenworkshop")
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/gardenworkshop",
+  { useNewUrlParser: true }
+  )
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
 //Use Routes
-app.use('/api/projects', projects)
+app.use('/api/projects', projects);
 
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production') {
