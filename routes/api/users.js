@@ -16,9 +16,9 @@ const User = require("../../models/User");
 router.use(cors())
 process.env.SECRET_KEY = 'secret';
 
-router.route("/")
+router.route("/login")
   .get(usersController.findAll)
-  .post(usersController.create)
+  .post(usersController.login)
 
 
 // router.post('/api/register', (req, res) => {
