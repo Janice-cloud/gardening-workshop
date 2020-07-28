@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const routes = require("./routes");
 const passport = require("passport");
 const app = express();
@@ -22,21 +22,21 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Bodyparser middleware
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(cors());
-app.use(
-    bodyParser.urlencoded({
-        extended: false
-    })
-);
+//app.use(
+//     bodyParser.urlencoded({
+//         extended: false
+//     })
+// );
 
-app.use(express.static("public"));
+//app.use(express.static("public"));
 // DB Config
-const MONGODB_URI = ""
+
 const mongoURI = "mongodb://localhost/workshop";
 
 // Connect to MongoDB
-mongoose.connect( MONGODB_URI || mongoURI, {
+mongoose.connect( process.env.MONGODB_URI || mongoURI, {
   useNewUrlParser: true,
   useFindAndModify: false
 })
@@ -52,11 +52,11 @@ require("./config/passport")(passport);
 // Routes
 app.use(routes);
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 
 // Start the API server

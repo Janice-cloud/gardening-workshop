@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { GET_PROJECTS, ADD_PROJECT, DELETE_PROJECT, PROJECTS_LOADING} from './types';
 
-const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000'
+//const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5001'
 
 export const getProjects = () => dispatch => {
     dispatch(setProjectLoading());
     axios
-        .get(BASE_URL + '/api/projects-routes')
+        // .get(BASE_URL + '/api/projects-routes')
+        .get('/api/projects')
         .then(res => 
             dispatch({
                 type: GET_PROJECTS,
@@ -17,7 +18,7 @@ export const getProjects = () => dispatch => {
 
 export const addProject = project => dispatch => {
     axios
-        .post('/api/projects-routes', project)
+        .post('/api/projects', project)
         .then(res => 
             dispatch({
                 type: ADD_PROJECT,
@@ -26,7 +27,7 @@ export const addProject = project => dispatch => {
 }
 
 export const deleteProject = id => dispatch => {
-    axios.delete(`/api/projects-routes/${id}`).then(res =>
+    axios.delete(`/api/projects/${id}`).then(res =>
         dispatch({
             type: DELETE_PROJECT,
             payload: id

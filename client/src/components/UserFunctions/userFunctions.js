@@ -23,7 +23,7 @@ export const registerUser = userData => {
 export const loginUser = userData => {
     // console.log(userData);
     return axios
-    .post(serverUrl + '/api/login', {
+    .post('/api/login', {
         email: userData.email,
         password: userData.password
     })
