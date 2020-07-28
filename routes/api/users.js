@@ -8,8 +8,8 @@ const passport = require("passport");
 const usersController = require("../../controllers/usersController")
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
+//const validateRegisterInput = require("../../validation/register");
+//const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
@@ -20,6 +20,12 @@ router.route("/login")
   .get(usersController.findAll)
   .post(usersController.login)
 
+router.route("/register")
+//      .get(usersController.findAll)
+      .post(usersController.register)
+
+router.route("/displayusers")
+    .get(usersController.displayusers)
 
 // router.post('/api/register', (req, res) => {
 //     // Form validation

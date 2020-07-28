@@ -9,7 +9,7 @@ let serverUrl = "http://localhost:5001"
 export const registerUser = userData => {
     // console.log(userData);
     return axios
-    .post(serverUrl + '/api/register', {
+    .post('/api/users/register', {
         first_name: userData.first_name,
         last_name: userData.last_name,
         email: userData.email,
@@ -38,7 +38,7 @@ export const loginUser = userData => {
 
 export const getUsers = userData => {
     return axios
-    .get(serverUrl + '/api/displayusers', {
+    .get('/api/users/displayusers', {
     })
     .then(response => {
         // console.log(response.data);
