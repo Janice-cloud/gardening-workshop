@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: "mongodb://localhost/gardenworkshop",
+  mongoURI: "mongodb://localhost/login",
   secretOrKey: "secret"
 };

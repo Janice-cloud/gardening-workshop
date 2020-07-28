@@ -1,43 +1,65 @@
 const express = require("express");
+const cors = require('cors');
+const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
-const projects = require('./routes/api/projects');
-
+const routes = require("./routes");
+const passport = require("passport");
 const app = express();
+const dotenv = require("dotenv");
 
-// bodyparser Middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(bodyParser.json());
+dotenv.config();
 
-// Connect to the Mongo DB
-mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/gardenworkshop",
-  { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB Connected..."))
-  .catch((err) => console.log(err));
+const PORT = process.env.PORT || 5001;
 
-//Use Routes
-app.use('/api/projects', projects);
-
-// Serve static assets if in production
-if(process.env.NODE_ENV === 'production') {
-  //Set static folder
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-     });
+// Define middleware here
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
 }
 
-const PORT = process.env.PORT || 5000;
+// Bodyparser middleware
+app.use(bodyParser.json());
+app.use(cors());
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+
+app.use(express.static("public"));
+// DB Config
+const MONGODB_URI = ""
+const mongoURI = "mongodb://localhost/workshop";
+
+// Connect to MongoDB
+mongoose.connect( MONGODB_URI || mongoURI, {
+  useNewUrlParser: true,
+  useFindAndModify: false
+})
+.then(() => console.log("MongoDB successfully connected"))
+.catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
+
+// Routes
+app.use(routes);
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 // Start the API server
 app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
