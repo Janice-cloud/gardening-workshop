@@ -45,26 +45,27 @@ class ProjectModal extends Component {
         return(
             <div>
                 <Button
+                    className="btn-lg btn-block"
                     color="dark"
                     style={{marginBottom: '2rem'}}
                     onClick={this.toggle}
-                >Add Project</Button>
+                >Create your patch</Button>
 
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
                 >
-                    <ModalHeader toggle={this.toggle}>Add To Project Feed</ModalHeader>    
+                    <ModalHeader toggle={this.toggle}>I am planting...</ModalHeader>    
                     <ModalBody>
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>
-                                <Label for="project">Project</Label>
+                                <Label for="project">Plant</Label>
                                 
                                 <Input
                                 type="text"
                                 name="name"
                                 id="project"
-                                placeholder="Add project"
+                                placeholder="add a plant"
                                 onChange={this.onChange}
                                 ></Input>
                                 
@@ -72,7 +73,7 @@ class ProjectModal extends Component {
                                     color="dark"
                                     style={{marginTop: '2rem'}}
                                     block
-                                >Create Project</Button>
+                                >sow seed</Button>
 
                             </FormGroup>
                         </Form>

@@ -10,7 +10,7 @@ class BrandDescription extends Component {
 
                     <div className="cardBackground col-xs-12 text-center">
                         <div className="card-body">
-                            <h5 className="card-title">Follow Us!</h5>
+                            <h5 className="card-title text-light">Follow Us!</h5>
                             <a href="/">
                                 <span className="fa-stack facebookLogo">
                                     <i className="far fa-circle fa-stack-2x"></i>

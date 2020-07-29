@@ -22,7 +22,7 @@ html, body {
 }
 
 h1 {
-    font-family: "Calibri", "Georgia", "Times New Roman", Times, serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: #212121;
     margin: 0;
     text-align: center;

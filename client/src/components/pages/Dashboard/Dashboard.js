@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
-import Sidebar from "../../Sidebar/Sidebar";
+//import Sidebar from "../../Sidebar/Sidebar";
 import ProjectFeed from "../../ProjectFeed/ProjectFeed";
 import ProjectModel from "../../ProjectModel/ProjectModel";
 import { Provider } from "react-redux";
@@ -29,25 +29,21 @@ class DashBoard extends Component {
 
   render() {
     return (
-        <Provider store={store}>
-      <div className="container-fluid pl-0">
-        <Sidebar />
-       
-        <div>
-          <h1>
-            Welcome {this.state.first_name} {this.state.last_name}
-          </h1>
-          
-            <div className="d-flex flex-row-reverse mr-5">
-            
-                <ProjectModel/>
-                <ProjectFeed />
-                
-           
+      <Provider store={store}>
+        <div className="container-fluid pl-0">
+          <div>
+            <h1>
+              Welcome {this.state.first_name}
+            </h1>
+
+            <div className="row d-flex justify-content-center">
+              <ProjectModel />
             </div>
-         
+            <div className="row d-flex justify-content-center w-75 p-3">
+              <ProjectFeed />
+            </div>
+          </div>
         </div>
-      </div>
       </Provider>
     );
   }

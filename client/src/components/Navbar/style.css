@@ -1,10 +1,14 @@
 .navbar {
-    background-color:#3f0f84;
+    background-color: rgb(161,154,108) !important;
 }
 
 .btn {
-    background-color: #001f3f !important;
+    background-color: transparent;
     color: #FFFFFF !important;
+}
+
+.fa-pagelines {
+    margin-right: 1rem;
 }
 
 /* .controlBtn {

@@ -4,9 +4,8 @@ aside
     height: 100%;
     top: 0;
     left: 0;
-    border: 1px solid #111;
 }
 
 .sidebar {
-    background-color:#3f0f84;
+    background-color:rgb(161,154,108);
 }

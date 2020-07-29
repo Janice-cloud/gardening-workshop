@@ -170,7 +170,7 @@ class Register extends Component {
                                 />
                                 <span style={{ color: "red" }}>{this.state.errors["password"]}</span>
                             </div>
-                            <button type='submit' className='btn btn-lg btn-primary btn-block'>
+                            <button type='submit' className='btn btn-lg btn-dark btn-block'>
                                 Register
                             </button>
                         </form>
