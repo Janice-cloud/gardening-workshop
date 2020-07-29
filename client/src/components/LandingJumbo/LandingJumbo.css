@@ -2,3 +2,9 @@
 .jumbotron {
 background-color: transparent !important;
 }
+
+.company-logo-textColour {
+    color: rgb(226,71,59);
+    margin-left: 2rem;
+}
+

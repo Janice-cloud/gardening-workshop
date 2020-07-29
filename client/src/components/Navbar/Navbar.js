@@ -28,7 +28,7 @@ class Navbar extends Component {
         <li className="flex-grow-1 nav-item active">
           <Link className="navbar-brand btn btn-sm active mr-5 mb-1" to="/">
             <div>
-              <i className="fa fa-pagelines sidebar-brand-icon rotate-n-15" />
+              <i className="fa fa-pagelines sidebar-brand-icon rotate-n-15 fa-2" />
               Gardening Workshop
             </div>
           </Link>
