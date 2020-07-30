@@ -82,7 +82,7 @@ class Register extends Component {
       password: this.state.password,
     };
     var result = this.handleValidation();
-    console.log(result);
+    //console.log(result);
     if (this.handleValidation()) {
       getUsers().then((data) => {
         console.log(data);

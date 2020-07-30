@@ -11,6 +11,17 @@ Be able to log in and create a profile.
 
 Be able to record plants planted in the garden.
 
+## How to use
+1. Download file
+2. "npm install" in terminal this will install all the packages required
+3. ensure MongoDB is running 
+4. "npm start" to run the application in react
+
+## App images
+
+Home Page
+
+
 ## Future up dates to be able to add notes on each plant :
 * soil used 
 * fertiliser used 
@@ -23,11 +34,7 @@ Be able to record plants planted in the garden.
         * Height 
         * Harvested
 
-## How to use
-1. Download file
-2. "npm install" in terminal this will install all the packages required
-3. ensure MongoDB is running 
-4. "npm start" to run the application in react
+
 
 ## Technologies Used
 
