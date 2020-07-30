@@ -20,7 +20,7 @@ Be able to record plants planted in the garden.
 ## App images
 
 Home Page
-
+![Home Page](https://github.com/Janice-cloud/gardening-workshop/blob/master/client/src/components/assets/images/Screen%20Shot%202020-07-30%20at%2010.15.57%20pm.jpg)
 
 ## Future up dates to be able to add notes on each plant :
 * soil used 
