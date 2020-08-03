@@ -38,10 +38,11 @@ class DashBoard extends Component {
 
             <div className="row d-flex justify-content-center">
               <ProjectModel />
-            </div>
-            <div className="row d-flex justify-content-center w-75 p-3">
               <ProjectFeed />
             </div>
+           
+            
+
           </div>
         </div>
       </Provider>

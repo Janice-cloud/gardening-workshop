@@ -10,6 +10,7 @@ import {
     Input } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addProject } from  '../../actions/projectActions' 
+import "../ProjectModel/ProjectModel.css"
 
 class ProjectModal extends Component {
     state = {
@@ -54,6 +55,7 @@ class ProjectModal extends Component {
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
+                    className="modal-dialog modal-lg"
                 >
                     <ModalHeader toggle={this.toggle}>I am planting...</ModalHeader>    
                     <ModalBody>

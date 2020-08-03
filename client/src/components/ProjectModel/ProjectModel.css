@@ -1,0 +1,13 @@
+.modal {
+    max-width: 500px;
+    margin: 2rem auto;
+    overflow-y: auto
+}
+
+.modal-dialog {
+    height: 130%; /* = 130% of the .modal-backdrop block = %90 of the screen */
+  }
+  
+.modal-content {
+    height: 100%; /* = 100% of the .modal-dialog block */
+  }

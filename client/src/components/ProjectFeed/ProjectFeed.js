@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
+import {
+  Container,
+  ListGroup,
+  ListGroupItem,
+  Button,
+  Row,
+  Col,
+} from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./style.css";
 import { connect } from "react-redux";
@@ -18,22 +25,25 @@ class ProjectFeed extends Component {
   render() {
     const { projects } = this.props.project;
     return (
-      <Container className="row d-flex justify-content-around">
-        <ListGroup>
+      <Container fluid className="row d-flex justify-content-around">
+        <ListGroup C>
           <TransitionGroup className="project-list">
             {projects.map(({ _id, name }) => (
               <CSSTransition key={_id} timeout={500} classNames="fade">
-                <ListGroupItem className="list-group-item">
-                  {name}
-                  <Button
-                    className="remove-btn"
-                    color="danger"
-                    size="sm"
-                    onClick={this.onDeleteClick.bind(this, _id)}
-                  >
-                    &times;
-                  </Button>
-                </ListGroupItem>
+                <Row>
+                  <ListGroupItem className="list-group-item col">
+                    {name}
+
+                    <Button
+                      className="remove-btn"
+                      color="danger"
+                      size="sm"
+                      onClick={this.onDeleteClick.bind(this, _id)}
+                    >
+                      &times;
+                    </Button>
+                  </ListGroupItem>
+                </Row>
               </CSSTransition>
             ))}
           </TransitionGroup>

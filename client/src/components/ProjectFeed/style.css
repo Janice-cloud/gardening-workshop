@@ -1,5 +1,11 @@
+.container {
+    width: 1000px;
+    position: absolute;
+}
 
 .remove-btn {
+    position: relative;
+    right: 0px;
     margin-left: 4rem;
 }
 
